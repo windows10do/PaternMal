@@ -22,8 +22,8 @@ Before running the installer, make sure you have:
 ## ⚡ Quick Start 🚦
 
 1. 📥 Clone and install:  
-   `git clone https://github.com/yourusername/paternmal.git`  
-   `cd paternmal`  
+   `git clone https://github.com/windows10do/PaternMal.git`  
+   `cd PaternMal`  
    `sh paternmal-setup.sh`
 
 2. ▶️ Run server:  

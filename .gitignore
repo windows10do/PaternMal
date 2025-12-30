@@ -1,0 +1,49 @@
+# -----------------------------
+# OS / Editor files
+# -----------------------------
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# -----------------------------
+# Node / Web assets
+# -----------------------------
+node_modules/
+dist/
+build/
+
+# -----------------------------
+# C++ build artifacts
+# -----------------------------
+*.o
+*.out
+*.exe
+*.obj
+*.dll
+*.so
+*.a
+*.bin
+
+# -----------------------------
+# Project-specific ignores
+# -----------------------------
+# Compiled server binary
+paternmal.bin
+
+# Auto-generated C++ source
+paternmal.cpp
+
+# Local settings
+settings.conf
+
+# Installer logs
+install.log
+
+# -----------------------------
+# Shell history / environment
+# -----------------------------
+*.sh~
+.env

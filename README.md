@@ -65,6 +65,7 @@ After installation, restart your shell 🔄 or run `source ~/.bashrc` (or `~/.zs
 ├── 🖥️ paternmal-cli.sh (CLI wrapper)  
 └── 📑 settings.conf (stores mode and last server info)  
 
+> ⚠ Note: Some files may fail to create, depending on your OS.
 ---
 
 ## 📝 Notes ✨

@@ -1,0 +1,53 @@
+name: Install & Lint Test 🛠️
+
+on:
+  pull_request:
+    branches: [ main ]
+  push:
+    branches: [ main ]
+
+jobs:
+  shellcheck:
+    name: ShellCheck Lint 🐚
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install ShellCheck
+        run: sudo apt-get update && sudo apt-get install -y shellcheck
+      - name: Lint Shell scripts
+        run: shellcheck paternmal-install.sh
+
+  install-dryrun:
+    name: Install Dry-run ✅
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install g++
+        run: sudo apt-get update && sudo apt-get install -y g++
+      - name: Simulate install (home in CI sandbox) and source profile
+        run: |
+          # Use a sandboxed HOME so we don't touch the runner's real home
+          HOME=$(pwd)/fakehome
+          mkdir -p "$HOME"
+          export HOME
+
+          # Run installer (writes to $HOME/.paternmal and updates profile)
+          sh paternmal-install.sh
+
+          # Source the profile(s) the installer may have modified so aliases/PATH take effect
+          if [ -f "$HOME/.bashrc" ]; then
+            . "$HOME/.bashrc"
+          fi
+          if [ -f "$HOME/.zshrc" ]; then
+            . "$HOME/.zshrc"
+          fi
+
+          # Verify binary exists
+          test -f "$HOME/.paternmal/bin/paternmal.bin"
+          # Verify the 'paternmal' command (alias/wrapper) is available after sourcing
+          if command -v paternmal >/dev/null 2>&1; then
+            echo "paternmal command available"
+          else
+            echo "paternmal command NOT available" >&2
+            exit 1
+          fi

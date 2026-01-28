@@ -83,4 +83,4 @@ This project is licensed under the **GNU General Public License v3.0 (GPLv3)**.
 Copyright © December 30, 2025 **windows10do**
 
 You may copy, distribute, and modify this software under the terms of the GPLv3.  
-See the LICENSE file for the full text of the license, including **Terms and Conditions**, Disclaimer of Warranty, and Limitation of Liability.
+See the [LICENSE.md](LICENSE.md) file for the full text of the license, including **Terms and Conditions**, Disclaimer of Warranty, and Limitation of Liability.

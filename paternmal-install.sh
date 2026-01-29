@@ -1,7 +1,7 @@
-# paternmal-setup.sh
+# paternmal-install.sh
 # Installer/Uninstaller for PaternMal into ~/.paternmal
-# Run with: sh paternmal-setup.sh          (install)
-#       or: sh paternmal-setup.sh uninstall   (remove)
+# Run with: sh paternmal-install.sh          (install)
+#       or: sh paternmal-install.sh uninstall   (remove)
 
 set -eu   # portable across Unix and Termux
 
